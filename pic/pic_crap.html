@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/jquery.Jcrop.css" type="text/css" />
+	
+	<style>
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 16px;
+}
+.align-center {
+    list-style: none;
+}
+.align-center li {
+    float: left;
+}
+.align-center li > a > img {
+    width: 30px;
+    height: 30px;
+
+}
+/*input {*/
+    /*position: absolute;*/
+    /*height: 300px;*/
+    /*width: 355px;*/
+    /*opacity: 0;*/
+/*}*/
+
+.mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.63);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,endColorstr=#99000000);
+    display: none;
+    z-index: 1000;
+}
+.container {
+    /*width: 30rem;*/
+    width: 480px;
+    /*height: 36rem;*/
+    margin: 0 auto;
+    position: relative;
+    box-shadow: -10px 0 10px rgba(41, 40, 40, 0.42),
+    10px 0 10px rgba(41, 40, 40, 0.42),
+    0 -10px 10px rgba(41, 40, 40, 0.42),
+    0 10px 10px  rgba(41, 40, 40, 0.42);
+    display: none;
+    z-index: 1001;
+    background-color: #525252;
+    background-color:rgba(80, 79, 78, 0.96);
+
+}
+.container .adorn {
+    /*height: 2.3rem;*/
+    /*line-height: 2.3rem;*/
+    height:37px;
+    line-height: 37px;
+    background-color: #fff;
+    /*display: -webkit-flex;*/
+    /*display: flex;*/
+}
+.adorn a, .adorn ul {
+    /*-webkit-box-flex: 1;*/
+    /*-moz-box-flex: 1;*/
+    /*-ms-flex:1;*/
+    /*flex: 1;*/
+}
+.adorn a:nth-of-type(1) {
+    text-align: left;
+    /*padding-left: .4rem;*/
+    padding-left: 6.4px;
+}
+.adorn a:nth-of-type(2) {
+    text-align: right;
+    /*padding-right: .4rem;*/
+    padding-right: 6.4px;
+}
+
+.align-center {
+    margin-top: .29rem;
+    margin-top: 4.8px;
+    /*display: flex;*/
+}
+.align-center li#li_first {
+  margin-left:20%;
+}
+.icon-selected {
+    border-bottom: 2px solid #1296e8;
+}
+.btn {
+    /*width: 3rem;*/
+    /*height: 2rem;*/
+    width: 48px;
+    height: 32px;
+    display: inline;
+    color: #1296e8;
+}
+.btn-left {
+    float: left;
+}
+.btn-right {
+    float: right;
+}
+a:hover {
+    cursor: pointer;
+}
+.have-img, .uploading {
+    /*padding: .5rem;*/
+    /*width: 29rem;*/
+    /*height: 29rem;*/
+    padding:8px;
+    width:464px;
+    height: 464px;
+    position: relative;
+}
+.popimg {
+    position: absolute;
+    /*left: 50%;
+    top: 50%;*/
+    /*width: 29rem;*/
+    /*height: 29rem;*/
+    width:464px;
+    height: 464px;
+}
+#cutImg {filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);}
+	</style>
+</head>
+<body>
+	<input type="file" id="doc">
+	<img id="imgSel" src="img/a.jpg" alt="">
+	<div class="mask">
+		<div class="container">
+			<div class="have-img" id="picShow">
+				<img class="popimg" id="cutImg" src="" alt="">
+			</div>
+			<div class="adorn">
+				<a id="adorn_cancel" class="btn btn-cancel btn-left">取消</a>
+				<ul class="align-center">
+					<li><a href="javascript:void(0);" id="cut" title="启动裁剪框"><img src="img/cut.png"></a></li>
+					<li><a href="javascript:void(0);" id="rotate_left"><img src="img/left_rotate.jpg"></a></li>
+					<li><a href="javascript:void(0);" id="rotate_right"><img src="img/right_rotate.jpg"></a></li>
+					<li><a href="javascript:void(0);" id="turn_hor"><img src="img/turn_hor.jpg"></a></li>
+					<li><a href="javascript:void(0);" id="turn_ver"><img src="img/turn_ver.jpg" ></a></li>
+				</ul>
+				<a id="adorn_confirm" class="btn btn-confirm btn-right">确认</a>
+			</div>
+			<div class="estab">
+			<a id="cancel" class="btn btn-cancel btn-left">取消</a>
+			<a id="confirm" class="btn btn-confirm btn-right">上传</a>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="jquery-1.10.1.min.js"></script>
+<script src="js/jquery.Jcrop.js"></script>
+<script src="js/jquery.color.js"></script>
+<script src="pic_drag.js"></script>
+</html>
